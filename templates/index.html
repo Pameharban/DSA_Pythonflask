@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../static/style.css">
+  </head>
+  
+<body>
+  <h1 style="color:#8b0606c7;">Product Purchase prediction</h1>
+  <h2 style="color:#0c0b0bc7;">This form is for predicting whether a person will purchase the product or not by the influence of social network ads</h2>
+
+
+<p></p>
+<form action="/prediction" method="post">
+  <label for="gender"><b>Enter gender:</b></label><br>
+  <input type="text" id="gender" name="gender"><br><br>
+  <label for="age"><b>Enter age:</b></label><br>
+  <input type="number" id="age" name="age"><br><br>
+  <label for="salay"><b>Enter Expected salary:</b></label><br>
+  <input type="number" id="salary" name="salary"><br><br>
+
+  <button type="submit">predict </button>
+  </form>
+   {% if (pred_res)==0 : %}
+   <h3 style="color:red;"> <center>Result is: Will not purchase the product</center></h3>
+   {% elif (pred_res)==1 : %}
+   <h3 style="color:red;"><center>Result is: Will purchase the product</center></h3>
+   {% endif %}
+
+</body>
+</html>
